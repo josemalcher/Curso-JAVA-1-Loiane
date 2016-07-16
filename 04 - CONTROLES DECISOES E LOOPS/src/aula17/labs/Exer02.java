@@ -20,7 +20,9 @@ public class Exer02 {
 			String nome = leitor.next();
 			System.out.println("Entre com a Senha");
 			String senha = leitor.next();
-		}
+			
+			
+		}while();
 
 	}
 
