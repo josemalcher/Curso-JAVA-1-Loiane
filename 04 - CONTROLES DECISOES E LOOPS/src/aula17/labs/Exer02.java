@@ -10,19 +10,26 @@ public class Exer02 {
 		 * aceite a senha igual ao nome do usuário, mostrando uma mensagem de
 		 * erro e voltando a pedir as informações.
 		 */
-		
+
 		Scanner leitor = new Scanner(System.in);
-		
+
 		boolean valido = true;
-		
-		do{
+		String nome = "";
+		String senha = "";
+
+		do {
 			System.out.println("Entre com Login");
-			String nome = leitor.next();
+			nome = leitor.next();
 			System.out.println("Entre com a Senha");
-			String senha = leitor.next();
-			
-			
-		}while();
+			senha = leitor.next();
+			if(nome.equalsIgnoreCase(senha)){
+				System.out.println("Senha não Pode ser igual ao login");
+				
+			}else{
+				System.out.println("Senha e Login OK");
+				valido = false;
+			}
+		} while(valido);
 
 	}
 
