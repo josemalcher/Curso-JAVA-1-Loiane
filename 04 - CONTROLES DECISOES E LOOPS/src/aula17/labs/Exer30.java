@@ -1,5 +1,7 @@
 package aula17.labs;
 
+import java.util.Scanner;
+
 public class Exer30 {
 	/*
 	 * 30. Desenvolva um programa que faça a tabuada de um número qualquer
@@ -21,4 +23,39 @@ que o inicial.
 
 	 * 
 	 */
+	
+	public static void main(String[] args) {
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.println("Entre como o numero para gerar a tabuada");
+		int numero = leitor.nextInt();
+		
+		boolean invalido = true;
+		int numeroFinal, numeroInicio;
+		
+		do{
+			System.out.println("Entre com o inicio da tabuada");
+			numeroInicio = leitor.nextInt();
+			
+			System.out.println("Entre com o numero Final");
+			numeroFinal = leitor.nextInt();
+			
+			if(numeroFinal > numeroInicio){
+				invalido = false;
+			}
+		}while(invalido);
+		
+		System.out.println("Tabauda de "+ numero );
+		System.out.println("Começa por "+ numeroInicio);
+		System.out.println("Termina por "+ numeroFinal);
+		System.out.println();
+		
+		for(int i=numeroInicio ; i <= numeroFinal ; i++){
+			System.out.println(numero + " x " + i + " = " + (numero * i));
+		}
+		
+		
+		
+	}
+	
 }
