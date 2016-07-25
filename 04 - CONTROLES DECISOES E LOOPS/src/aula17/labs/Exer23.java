@@ -16,4 +16,13 @@ o 2 - R$ 3.98
 o ...
 o 50 - R$ 99.50
 	 */
+	
+	public static void main(String[] args) {
+		System.out.println("Lojas Quase Dois - Tabela de preços");
+		for(int i = 1 ; i <= 50 ; i++){
+			System.out.println(i + " - R$ "+ (1.99 * i));
+		}
+	}
+	
+	
 }
