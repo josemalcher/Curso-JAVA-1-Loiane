@@ -14,4 +14,11 @@ o 2 - R$ 0.36
 o ...
 o 50 - R$ 9.00
  */
+	
+	public static void main(String[] args) {
+		System.out.println("Panificadora Pão de Ontem - Tabela de preços");
+		for(int i = 1 ; i <= 50 ; i++){
+			System.out.println(i + " - R$ "+ (0.18 * i));
+		}
+	}
 }
