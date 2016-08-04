@@ -8,4 +8,7 @@ public class Exerc29 {
 	 * receber os elementos de B. Desta forma, C deverá ter o dobro de elementos
 	 * de A e B, ou seja, 20 elementos.
 	 */
+	public static void main(String[] args) {
+		
+	}
 }
