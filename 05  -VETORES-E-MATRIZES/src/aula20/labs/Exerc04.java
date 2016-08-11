@@ -16,93 +16,85 @@ public class Exerc04 {
 	 * 
 	 */
 	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
 
-		Scanner leitor = new Scanner(System.in);
-
-		String[][] comprimissos = new String[31][24];
+		String[][] compromissos = new String[31][24];
 
 		boolean sair = false;
 		byte opcao;
-
 		while (!sair) {
-			System.out.println("Digite 1 para adicionar comprimisso");
-			System.out.println("Digite 2 para verificar comprimissos");
-			System.out.println("digite 0 (zero) para sair");
 
-			opcao = leitor.nextByte();
+			System.out.println("Digite 1 para adicionar compromisso.");
+			System.out.println("Digite 2 para verificar compromisso.");
+			System.out.println("Digite 0 para sair.");
 
-			if (opcao == 1) {
+			opcao = scan.nextByte();
+
+			if (opcao == 1) { // adicionar compromisso
 
 				boolean diaValido = false;
 				int dia = 0;
 				while (!diaValido) {
 					System.out.println("Entre com o dia do mês");
-					dia = leitor.nextInt();
-
+					dia = scan.nextInt();
 					if (dia > 0 && dia <= 31) {
 						diaValido = true;
 					} else {
-						System.out.println("Dia não válido, digite entre 0 e 31");
-					}
-				}
-
-				boolean horavalida = false;
-				int hora = 0;
-
-				while (!horavalida) {
-					System.out.println("DIgite a hora do comprimisso");
-					hora = leitor.nextInt();
-					if (hora >= 0 && hora <= 24) {
-						horavalida = true;
-					} else {
-						System.out.println("Hora inválida, digite novamente!!");
-					}
-				}
-
-				dia--; // para caber na numeração do arry é feito esse ajuste
-				System.out.println("Digite o compromisso");
-				comprimissos[dia][hora] = leitor.next();
-
-			} else if (opcao == 2) {
-
-				boolean diaValido = false;
-				int dia = 0;
-
-				while (!diaValido) {
-					System.out.println("Digite o DIA do mês: ");
-					dia = leitor.nextInt();
-
-					if (dia > 0 && dia <= 31) {
-						diaValido = true;
-					} else {
-						System.out.println("Digite um DIA VALIDO!!, DIgite novamente");
+						System.out.println("Dia inválido, digite novamente");
 					}
 				}
 
 				boolean horaValida = false;
 				int hora = 0;
-
 				while (!horaValida) {
 					System.out.println("Entre com a hora do compromisso");
-					hora = leitor.nextInt();
-
+					hora = scan.nextInt();
 					if (hora >= 0 && hora <= 24) {
 						horaValida = true;
+					} else {
+						System.out.println("Hora inválida, digite novamente");
 					}
-
 				}
 
 				dia--;
-				System.out.println("O comprimisso agendado é: ");
-				System.out.println(comprimissos[dia][hora]);
+				System.out.println("Digite o compromisso");
+				compromissos[dia][hora] = scan.next();
+
+			} else if (opcao == 2) { // verificar compromisso
+
+				boolean diaValido = false;
+				int dia = 0;
+				while (!diaValido) {
+					System.out.println("Entre com o dia do mês");
+					dia = scan.nextInt();
+					if (dia > 0 && dia <= 31) {
+						diaValido = true;
+					} else {
+						System.out.println("Dia inválido, digite novamente");
+					}
+				}
+
+				boolean horaValida = false;
+				int hora = 0;
+				while (!horaValida) {
+					System.out.println("Entre coma hora do compromisso");
+					hora = scan.nextInt();
+					if (hora >= 0 && hora <= 24) {
+						horaValida = true;
+					} else {
+						System.out.println("Hora inválida, digite novamente");
+					}
+				}
+
+				dia--;
+				System.out.println("O compromisso agendado é:");
+				System.out.println(compromissos[dia][hora]);
 
 			} else if (opcao == 0) {
 				sair = true;
 			} else {
 				System.out.println("Opção inválida, digite novamente");
 			}
-
 		}
-
 	}
 }
