@@ -16,6 +16,12 @@ public class Exerc01 {
 	 */
 
 	public static void main(String[] args) {
-
+		Lampada lampada01 = new Lampada();
+		
+		lampada01.ligar();
+		lampada01.mostrarEstado();
+		
+		lampada01.desligar();
+		lampada01.mostrarEstado();
 	}
 }
