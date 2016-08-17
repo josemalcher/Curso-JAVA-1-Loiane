@@ -9,6 +9,8 @@ public class CalculadoraFibonacci {
 		return fibonacci(num - 1) + fibonacci(num - 2);
 	}
 
+	//EXERCICIO 02
+	
 	// 5 = 5 + somatorio(4)
 	// 4 = 4 + somatorio(3)
 	// 3 = 3 + somatorio(2)
