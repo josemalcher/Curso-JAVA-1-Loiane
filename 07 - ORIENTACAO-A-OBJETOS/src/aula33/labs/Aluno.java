@@ -1,5 +1,5 @@
 package aula33.labs;
-
+//resolução da LOIANE!
 public class Aluno {
 
 	private String nome;
