@@ -1,5 +1,15 @@
 package aula35.labs;
 
 public class Exerc01 {
-
+	/*
+	 * 1. Escreva um método recursivo e estático que calcule e retorne o
+	 * N-­‐ésimo termo da sequência Fibonacci. Alguns números desta sequência
+	 * são: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89...
+	 * 
+	 */
+	public static void main(String[] args) {
+		for(int i = 0 ; i< 20 ; i++){
+			System.out.println(CalculadoraFibonacci.fibonacci(i)+ " ");
+		}
+	}
 }
