@@ -7,4 +7,23 @@ public class Exerc01 {
 	 * zerar, incrementar e retornar o valor do contador. Desenvolva um programa
 	 * para testar essa classe.
 	 */
+	
+	static void imprimirValor(){
+		System.out.println(Contador.obterValor());
+	}
+	
+	public static void main(String[] args) {
+		imprimirValor();
+		
+		Contador.incrementar();
+		
+		imprimirValor();
+		
+		Contador.incrementar();
+		Contador.incrementar();
+		Contador.incrementar();
+		
+		imprimirValor();
+		
+	}
 }
