@@ -9,4 +9,12 @@ public class Exerc04 {
 	 * • 1 milha quadrada = 640 acres 
 	 * • 1 acre = 43.560 pés quadrados
 	 */
+	
+	static void imprssora(double num){
+		System.out.println(num);
+	}
+	
+	public static void main(String[] args) {
+		imprssora(ConversaoDeUnidadesDeArea.metroQuadradoPesQuadrados(100));
+	}
 }
