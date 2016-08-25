@@ -16,7 +16,7 @@ public class Teste2 {
 		
 		//exemplo 3 - FALHA em tempo de execução
 		Object o3 = new Object();
-		String s3 = (String)o3;
+		//String s3 = (String)o3;
 		
 		//Exemplo 4 - Falaha em tempo de COMPILAÇÃO
 		//o4 nunca referencia String já que retorno é int
