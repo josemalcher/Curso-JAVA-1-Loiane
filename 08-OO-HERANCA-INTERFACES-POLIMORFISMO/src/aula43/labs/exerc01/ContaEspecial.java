@@ -9,7 +9,7 @@ public class ContaEspecial extends Conta{
 		double saldoComLimete = this.getSaldo() + this.limite;
 		
 		if((saldoComLimete - quantidadeSACAR) >= 0){
-			this.setLimite(this.getLimite()-quantidadeSACAR);
+			this.setSaldo(this.getSaldo()-quantidadeSACAR);
 			
 			return true;
 		}

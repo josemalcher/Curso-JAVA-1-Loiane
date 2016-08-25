@@ -2,11 +2,12 @@ package aula43.labs.exerc01;
 
 import java.util.Calendar;
 
+
 //resolução LOiane
 public class ContaPoupanca extends Conta{
 
 	
-	private double diaRendimento;
+	private int diaRendimento;
 
 	
 	
@@ -27,8 +28,10 @@ public class ContaPoupanca extends Conta{
 	
 	@Override
 	public String toString() {
-		String s = "ContaPoupanca [diaRendimento=" + diaRendimento + " + "
-				+ " ; ] \n [" + super.toString() + " ] "; 
+		String s = "ContaPoupanca [diaRendimento=" + 
+					diaRendimento + 
+					" ] " +
+					" \n [ " + super.toString() + " ] "; 
 		
 		return s;
 		
@@ -38,7 +41,7 @@ public class ContaPoupanca extends Conta{
 		return diaRendimento;
 	}
 
-	public void setDiaRendimento(double diaRendimento) {
+	public void setDiaRendimento(int diaRendimento) {
 		this.diaRendimento = diaRendimento;
 	}
 	
