@@ -11,6 +11,7 @@ public class UsandoThrows {
 			System.out.println("Você digitou " + num);
 		} catch (Exception e) {
 			System.out.println("Entrada inválida");
+			//usar somente em logs
 			e.printStackTrace();
 		}
 
