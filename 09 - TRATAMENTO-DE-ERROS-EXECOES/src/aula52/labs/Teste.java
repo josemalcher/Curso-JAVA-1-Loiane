@@ -16,22 +16,66 @@ public class Teste {
 			System.out.println("1: consultar contato");
 			System.out.println("2: adicionar contato ");
 			System.out.println("3: Sair ");
-			
-			try{
+
+			try {
 				String entrada = leitor.nextLine();
 				opcao = Integer.parseInt(entrada);
-				if(opcao == 1 || opcao == 2 || opcao == 3){
+				if (opcao == 1 || opcao == 2 || opcao == 3) {
 					entradaValida = true;
-					
-				}else{
+
+				} else {
 					throw new Exception("Entrada in´valida \n");
 				}
-			}catch(Exception e){
+			} catch (Exception e) {
 				System.out.println("Entrada inválida, digite novamente \n");
 			}
-			
+
 		}
 		return opcao;
+	}
+
+	public static String leInformacaoString(Scanner leitor, String msg) {
+		System.out.println(msg);
+		String entrada = leitor.nextLine();
+		return entrada;
+	}
+
+	public static void consultarContato(Scanner leitor, Agenda agenda) {
+		String nomeContato = leInformacaoString(leitor, "Entre com o nome do contato");
+		try {
+			if (agenda.consultaContatoNome(nomeContato) >= 0) {
+				System.out.println("COntato existe");
+			}
+		} catch (ContatoNaoExisteException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public static void adicionarContato(Scanner leitor, Agenda agenda) {
+
+		try {
+			System.out.println("Criando um contato! Digite as informações");
+			String nome = leInformacaoString(leitor, "Entre com o nome");
+			String telefone = leInformacaoString(leitor, "Entre com o telefone");
+			String email = leInformacaoString(leitor, "Entre com o email");
+
+			Contato contato = new Contato();
+			contato.setNome(nome);
+			contato.setTelefone(telefone);
+			contato.setEmail(email);
+
+			System.out.println("Contato Criado: ");
+			System.out.println(contato); // toString
+
+			agenda.adicionarContato(contato);
+		} catch (AgendaCheiaException e) {
+
+			System.out.println(e.getMessage());
+
+			System.out.println("Contatos da Agenda");
+			System.out.println(agenda);
+		}
+
 	}
 
 	public static void main(String[] args) {
@@ -42,16 +86,22 @@ public class Teste {
 		 * 
 		 * Contato c3 = new Contato(); System.out.println(c3);
 		 */
-		
+
 		Scanner leitor = new Scanner(System.in);
-		int opcao = obterOpcaoMenu(leitor);
-		
-		if(opcao == 1){
-			
-		}else if(opcao == 2){
-			
-		}else if(opcao ==3){
-			System.exit(0);
+
+		Agenda agenda = new Agenda();
+
+		int opcao = 1;
+		while (opcao != 3) {
+			opcao = obterOpcaoMenu(leitor);
+
+			if (opcao == 1) { // consultar contatos
+				consultarContato(leitor, agenda);
+			} else if (opcao == 2) {
+				adicionarContato(leitor, agenda);
+			} /*else if (opcao == 3) {
+				System.exit(0);
+			}*/
 		}
 
 	}
